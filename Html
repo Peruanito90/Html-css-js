@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+  <title>Lista de películas</title>
+
+  <style>
+
+    /* Estilos CSS para la lista de películas */
+
+    .movie-list {
+
+      display: flex;
+
+      flex-wrap: wrap;
+
+    }
+
+    .movie-card {
+
+      width: 200px;
+
+      margin: 10px;
+
+      padding: 10px;
+
+      border: 1px solid #ccc;
+
+      border-radius: 5px;
+
+      text-align: center;
+
+    }
+
+    .movie-card img {
+
+      width: 100%;
+
+      height: auto;
+
+      border-radius: 5px;
+
+      margin-bottom: 10px;
+
+    }
+
+    .movie-card h3 {
+
+      margin-bottom: 5px;
+
+    }
+
+    .movie-card p {
+
+      font-size: 14px;
+
+    }
+
+    .play-button {
+
+      background-color: #4CAF50;
+
+      color: white;
+
+      padding: 6px 12px;
+
+      border-radius: 4px;
+
+      border: none;
+
+      cursor: pointer;
+
+    }
+
+  </style>
+
+</head>
+
+<body>
+
+  <h1>Películas populares</h1>
+
+  <div class="movie-list">
+
+    <div class="movie-card">
+
+      <img src="imagen1.jpg" alt="Película 1">
+
+      <h3>avatar 2 </h3>
+
+      <p> 🧩Año: 2023| 🔊 Calidad: audio🎭Género: #Animacion
+
+#avatar2</p>
+
+      <button class="play-button" data-video="video1.mp4">Reproducir</button>
+
+    </div>
+
+    <div class="movie-card">
+
+      <img src="imagen2.jpg" alt="Película 2">
+
+      <h3>🍿Super Mario Bros</h3>
+
+      <p>🧩Año: 2023| 🔊 Calidad: audio🎭Género: #Animacion
+
+#SuperMarioBros </p>
+
+      <button class="play-button" data-video="video2.mp4">Reproducir</button>
+
+    </div>
+
+  <div class="movie-list">
+
+ </div>
+
+    <div class="movie-card">
+
+      <img src="imagen3.jpg" alt="Película 1">
+
+      <h3>Título de la película 2</h3>
+
+      <p>Descripción de la película 2</p>
+
+      <button class="play-button" data-video="video3.mp4">Reproducir</button>
+
+  </div>
+
+    <div class="movie-card">
+
+      <img src="imagen4.jpg" alt="Película 2">
+
+      <h3>Título de la película 2</h3>
+
+      <p>info</p>
+
+      <button class="play-button" data-video="video4.mp4">Reproducir</button>
+
+  </div>
+
+  <script>
+
+    // Obtén todos los elementos de botón de reproducción
+
+    var playButtons = document.querySelectorAll('.play-button');
+
+    // Recorre los botones de reproducción y agrega un controlador de eventos a cada uno
+
+    playButtons.forEach(function(button) {
+
+      button.addEventListener('click', function() {
+
+        var videoUrl = button.getAttribute('data-video');
+
+        reproducirVideo(videoUrl);
+
+      });
+
+    });
+
+    // Función para reproducir el video
+
+    function reproducirVideo(url) {
+
+      var videoElement = document.createElement('video');
+
+      videoElement.src = url;
+
+      videoElement.controls = true;
+
+      videoElement.autoplay = true;
+
+      videoElement.style.width = '100%';
+
+      // Reemplaza el contenido de la página con el reproductor de video
+
+      document.body.innerHTML = '';
+
+      document.body.appendChild(videoElement);
+
+    }
+
+  </script>
+
+</body>
+
+</html>
+
